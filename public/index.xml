@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discovering VGC Archetypes with Clustering</title>
-      <link>http://localhost:1313/posts/test/</link>
+      <link>http://localhost:1313/posts/vgc-clustering/</link>
       <pubDate>Thu, 23 Oct 2025 10:30:03 +0000</pubDate>
-      <guid>http://localhost:1313/posts/test/</guid>
+      <guid>http://localhost:1313/posts/vgc-clustering/</guid>
       <description>Using data science to help with regional prep</description>
     </item>
   </channel>
