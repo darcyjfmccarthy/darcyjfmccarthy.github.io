@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ExampleSite</title>
+    <title>The Pond 🐸</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on ExampleSite</description>
-    <image>
-      <title>ExampleSite</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
+    <description>Recent content on The Pond 🐸</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Oct 2025 10:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discovering VGC Archetypes with Clustering</title>
       <link>http://localhost:1313/posts/vgc-clustering/</link>
-      <pubDate>Thu, 23 Oct 2025 10:30:03 +0000</pubDate>
+      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/vgc-clustering/</guid>
       <description>Using data science to help with regional prep</description>
     </item>

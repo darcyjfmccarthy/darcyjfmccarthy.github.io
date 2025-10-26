@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on The Pond 🐸</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on The Pond 🐸</description>
+    <title>VGC on The Pond 🐸</title>
+    <link>http://localhost:1313/tags/vgc/</link>
+    <description>Recent content in VGC on The Pond 🐸</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vgc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discovering VGC Archetypes with Clustering</title>
       <link>http://localhost:1313/posts/vgc-clustering/</link>

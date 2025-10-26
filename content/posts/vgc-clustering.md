@@ -1,11 +1,10 @@
 ---
 title: "Discovering VGC Archetypes with Clustering"
-date: 2025-10-23T10:30:03+00:00
+date: 2025-10-26
 # weight: 1
 # aliases: ["/first"]
-tags: ["first"]
-author: "Me"
-# author: ["Me", "You"] # multiple authors
+tags: ["Data Science", "Pokemon", "VGC", "Clustering"]
+author: "Darcy McCarthy"
 showToc: true
 TocOpen: false
 draft: false
@@ -35,7 +34,7 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-## Motivation
+## Introduction
 
 In general, when I have a regional coming up, one of the first questions I have is _"what am I most likely to play against?"_. Getting a good answer to this makes an enormous difference - I think we've all had experiences of bringing the wrong team to a tournament and having a pretty bad weekend because of it. 
 
@@ -48,7 +47,7 @@ For a while now I've been frustrated that there seems to be nothing better than 
 
 On top of the current state of Pokemon usage stats not being useful, it also just generally conflicts with the way we understand Pokemon teams. Generally in popular discourse we talk about 'cores' or 'archetypes' - things like (speaking from a Regulation H lens here) rain, DUG, etc. And yet, no one seems to have figured out a good way to tell you what archetypes exist, and which ones you can expect to play against on a given weekend. It seems to me that having information on this would be _much_ more valuable than what we have right now. This article is my attempt to create something that fills that gap - a data driven list of team compositions that would adequately prepare you for your next regional.
 
-**(If you don't care about the methodology, click here to see the current archetypes in VGC26 Regulation H)**
+**(If you don't care about the methodology, click [here](#results) to see the current archetypes in VGC26 Regulation H)**
 
 ## Methodology
 
@@ -81,7 +80,7 @@ Once the data is transformed and cleaned, we're ok to start clustering. For this
 Hopefully it's clear what this technique does and why it was a good fit for this task. If not, here's a good breakdown: https://www.geeksforgeeks.org/machine-learning/hierarchical-clustering/
 
 
-## Archetype Identification
+### Archetype Identification
 
 After clustering, there's still a little bit of work to do before we get our final set of archetypes. To translate our data into something actionable, we need to actually pull out what 'defines' each cluster.
 
@@ -102,4 +101,57 @@ _(Note: different to what you might be used to, the x and y axes don't particula
   ></iframe>
 </div>
 
+Now to meet the teams!
+
+### Archetype 1: Incineroar, Basculegion-Male, Pelipper, Archaludon
+_e.g. Fabio Lima's Belo Horizonte t8 team: https://pokepast.es/5852fc44e449d877_
+
+Probably the most archetype-y archetype out there. One interesting point here is that Basculegion is now firmly considered part of this archetype - I imagine if we did the same analysis in 2025, that might not be the case.
+
+### Archetype 2: Gholdengo, Sneasler, Rillaboom, Ninetales-Alola, Ursaluna-Bloodmoon
+_e.g. Alex Arand's Milwaukee 1st place team: https://pokepast.es/498a1a5967851380_
+
+If you've been following the metagame at all, you won't be surprised to see this team come up first. What might be a surprise is it's got 5 Pokemon - it turns out people are swapping out the fire type on the team more than I'd thought (which you can see represented as different clumps on the graph!), e.g. lots of Arcanine-Hisui appearing in the 4-4 range.
+
+### Archetype 3: Sneasler, Indeedee-Male, Tyranitar
+_e.g. Erich Schrader's Milwaukee t16 team: https://pokepast.es/da8f52d70b02271b_
+
+There's a few teams in this mold - the paste that did well in last year's Toronto team, Nils Dunlop's old sand team, and others.
+
+### Archetype 4: Gholdengo, Amoonguss, Porygon2, Incineroar, Ursaluna
+_e.g. Jean Lopez' Belo Horizonte t32 team: https://pokepast.es/022a5974ab910956_
+
+Classic Reg H trick room balance! The main variations of this include Kilowattrel and Sneasler, but other Pokemon show up too.
+
+### Archetype 5: Indeedee-Female, Torkoal, Ursaluna
+_e.g. Tom Hayden's Milwaukee t128 team: https://pokepast.es/8a787b7aac5f60ea_
+
+Hard trick room! These seem to be the 3 Pokemon that are always around - in classic HTR fashion there's a lot of variance here. It's worth noting that this archetype is performing pretty badly despite its high usage - it is pretty hard to find these in day 2.
+
+### Archetype 6: Sneasler, Volcarona, Rillaboom, Kingambit
+_e.g. Jerry Woods III's Milwaukee t128 team: https://pokepast.es/5ec7f2641a888942_
+
+This balance archetype has a lot more usage at lower records. It also covers significant variance - most of the teams in this cluster have 3/4 of the headline Pokemon, rather than all 4.
+
+
+### Archetype 7: Gholdengo, Tyranitar, Garchomp
+_e.g. Adit Selvaraj's Milwaukee t32 team: https://pokepast.es/7c904717e797fcde_
+
+This stuck out to me a lot, and I'm imagining will stick out to lots of other people too! This cluster is fairly low usage, and typically looks like hyper-offense, with one of 3 different tailwind setters on the team. It's also another one where we typically see 2/3 of the headline mons on the team at once, rather than all 3.
+
+### Archetype 8: Incineroar, Dragonite, Ninetales-Alola, Kingambit
+_e.g. Dylan Matthews' Milwaukee 4th place team: https://pokepast.es/9b656262d9ee55a9_
+
+I'm not tapped in enough to know where this has come from, but the above paste got a lot of usage this weekend!
+
+
 ## What next?
+
+I think the results above actually describe the state of the metagame fairly well. There's a few things missing though:
+- The idea of 'balance' isn't captured very well here. DUG is a pretty glaring omission to me, as is Sneasler + Electabuzz/Magmar. I think this is because 'Balance' is generally quite vague and a lot of the spots on the teams are pretty interchangeable. Nonetheless, I think the gold star version of this project would be able to capture that in some way.
+- The geometry of my representation here isn't very nice, and I think that shows on the TSNE plot. I am 90% certain this is due to the sparsity of the representation (where each row has 6 1s and 300+ 0s). I think the biggest improvements would come from finding a more efficient and informative representation
+- Lots of archetypes aren't just defined by Pokemon, but moves and abilities too. For example, a feature for 'Tailwind' or even something more vague like 'Redirection' might lead to more interpretable clusters.
+
+More than anything though, my real motivation for sharing this is to hopefully spark some more creativity within the Pokemon community when it comes to preparation and data science. The full working code for this project can be found here, and I strongly encourage anyone interested to try improve on this! I likely won't have time to do it myself, so all help is appreciated.
+
+Thanks for reading! I hope this was useful, if not interesting.
