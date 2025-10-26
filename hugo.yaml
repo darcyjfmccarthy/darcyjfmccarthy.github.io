@@ -82,7 +82,7 @@ params:
     - name: x
       url: "https://x.com/frogtypebeat_"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/darcyjfmccarthy"
 
   analytics:
     google:
