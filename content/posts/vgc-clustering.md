@@ -152,6 +152,6 @@ I think the results above actually describe the state of the metagame fairly wel
 - The geometry of my representation here isn't very nice, and I think that shows on the TSNE plot. I am 90% certain this is due to the sparsity of the representation (where each row has 6 1s and 300+ 0s). I think the biggest improvements would come from finding a more efficient and informative representation
 - Lots of archetypes aren't just defined by Pokemon, but moves and abilities too. For example, a feature for 'Tailwind' or even something more vague like 'Redirection' might lead to more interpretable clusters.
 
-More than anything though, my real motivation for sharing this is to hopefully spark some more creativity within the Pokemon community when it comes to preparation and data science. The full working code for this project can be found here, and I strongly encourage anyone interested to try improve on this! I likely won't have time to do it myself, so all help is appreciated.
+More than anything though, my real motivation for sharing this is to hopefully spark some more creativity within the Pokemon community when it comes to preparation and data science. The full working code for this project can be found [here](https://github.com/darcyjfmccarthy/poliboard/blob/master/Reg%20H%20Clusters.ipynb), and I strongly encourage anyone interested to try improve on this! I likely won't have time to do it myself, so all help is appreciated.
 
 Thanks for reading! I hope this was useful, if not interesting.
